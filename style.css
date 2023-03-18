@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-body: #b6cbce;
+    --color-heading: #eef3db;
+    --color-base: #033f47;
+    --color-base2: #022a30;
+    --color-brand: #e0f780;
+    --color-brand2: #deff58;
+    --sidbar-width: 280px;
+    --font-base: "Bai Jamjuree";
+}
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: var(--color-base2);
+    font-family: var(--font-base);
+}
+.side-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 100vh;
+    background: linear-gradient(rgba(3, 63, 71, 0.8), rgba(3, 63, 71, 0.8)), url(../images/sidebar-img.jpg);
+    background-size: cover;
+    background-position: center;
+    width: var(--sidbar-width);
+    z-index: 101;
+}
+.side-bar ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+.side-bar ul li a {
+    font-size: 21px;
+    color: var(--color-body);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+}
+.side-bar ul li a:hover {
+    color: var(--color-brand2);
+    transition: all .3s;
+}
+.side-bar ul li a.active {
+    color: var(--color-brand2);
+}
+.side-bar ul li .my-photo {
+    width: 130px;
+    height: 130px;
+    border: 5px solid var(--color-brand2);
+    border-radius: 50%;
+}
+.close {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    display: none;
+}
+.nav {
+    justify-content: space-between;
+    display: none;
+    padding: 2%;
+    transition: all .3s;
+    position: fixed;
+    width: 96%;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.096);
+    z-index: 100;
+    background-color: var(--color-base2);
+}
+.nav h1 {
+    text-transform: capitalize;
+    color: var(--color-body);
+    font-weight: 400;
+}
+.main {
+    display: flex;
+}
+.content {
+    width: calc(100vw - var(--sidbar-width));
+    right: 0;
+    position:absolute;
+}
+.content .header {
+    height: 100vh;
+    border-bottom: 1px solid var(--color-base);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--color-heading);
+}
+.content .header .text h3 {
+    font-size: 300%;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.content .header .text span {
+    font-size:200%;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--color-brand2);
+}
+.content .header img {
+    width: 50%;
+}
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+}
+.buttons a ,.about a{
+    color: var(--color-base2);
+    background-color: var(--color-brand);
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: capitalize;
+    padding: 10px 30px;
+    font-weight: 700;
+    border-radius: 5px;
+}
+.services {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    padding:0 100px ;
+    gap: 10px;
+    border-bottom: 1px solid var(--color-base);
+}
+.services .row {
+    display: flex;
+    justify-content: space-between;
+}
+.services .row .card {
+    width: 25%;
+    margin-top: 20px;
+    background-color: var(--color-base);
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.services .row .card  a,.work .card a  {
+    color:var(--color-heading);
+    font-weight: 700;
+    margin-top: 10px;
+    font-size: 20px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+.services .row .card  a:hover,.work .card a:hover{
+    transition: all .3s;
+    color: var(--color-brand2);
+}
+.services .row .card:hover{
+    transition: all .3s;
+    box-shadow: 5px 5px 1px var(--color-brand2);
+}
+.services .row .card img{
+    width: 30px;
+    background-color: var(--color-brand);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.services h3 ,.work h3,.about h3,.contact h3{
+    color: var(--color-brand2);
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.services h2 {
+    color: var(--color-heading);
+    font-size: 50px;
+}
+.services .row .card h1 {
+    color: var(--color-body);
+    font-size: 25px;
+}
+.services .row .card span {
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--color-brand2);
+}
+.work {
+    border-bottom: 1px solid var(--color-base);
+    padding: 100px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+.work .row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+}
+.work .card {
+    width: 44%;
+    background-color: var(--color-base);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom:10px ;
+}
+.work .card:hover{
+    transition: all .3s;
+    box-shadow: 5px 5px 1px var(--color-brand2);
+}
+.work .card img {
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.work .card h3 {
+    color: var(--color-body);
+    font-size: 25px;
+    text-transform: capitalize;
+}
+.work .card .text {
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.work .card .text span{
+    color: var(--color-body);
+    font-weight: 400;
+    font-size: 20px;
+}
+.about {
+    border-bottom: 1px solid var(--color-base);
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.about span {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--color-body);
+    text-align: center;
+    width: 750px;
+    background-color: var(--color-base);
+    padding: 30px;
+    border-radius: 10px;
+}
+.lmao {
+    height: 0;
+}
+.contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 0;
+    border-bottom: 1px solid var(--color-base);
+    
+}
+.contact form {
+    display: flex;
+    flex-direction: column;
+    width: 810px;
+    margin: 30px auto ;
+    gap: 15px;
+}
+.contact form .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+.contact form .row input {
+    width: 100%;
+}
+.contact form input,.contact form textarea{
+    padding: 15px;
+    outline: 0;
+    border: 3px solid transparent;
+    color: var(--color-body);
+    background-color: var(--color-base);
+    font-size: 15px;
+    resize: vertical;
+    border-radius: 5px;
+}
+.contact form textarea{
+    min-height: 100px;
+}
+.contact form input::placeholder ,.contact form textarea::placeholder {
+    color: var(--color-body);
+}
+.contact form input:hover,.contact form textarea:hover{
+    border-color: var(--color-brand2);
+    transition: all .3s;
+}
+.contact form input[type="submit"] {
+    cursor: pointer;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 30px;
+    align-items: center;
+}
+.footer span {
+    color: #b6cbce;
+    font-weight: 500;
+    font-size: 20px;
+}
+.footer span a {
+    color: var(--color-base);
+    text-decoration: none;
+    font-weight: 700;
+}
+.footer span a:hover {
+    color: var(--color-brand2);
+    transition: all .3s;
+}
+.footer ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+.footer ul li img {
+    width: 25px;
+    background-color: var(--color-base);
+    height: 25px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.footer ul li a img:hover{
+    background-color: var(--color-brand2);
+    transition: all .3s;
+}
+@media screen and (max-width:1370px) {
+    .content .header .text h3 {
+        font-size: 170%;
+    }
+    .content .header {
+        justify-content: space-between;
+    }
+    .content .header .text span {
+        font-size: 150%;
+    }
+    .buttons {
+        gap: 10px;
+    }
+    .content .header img{
+        width: 60%;
+    }
+    .side-bar {
+        width: 240px;
+    }
+    .services {
+        padding: 0 30px;
+    }
+    .work{
+        padding: 50px 10px ;
+    }
+    .work .row{
+
+        gap: 25px;
+    }
+    .work .card {
+        width: 47%;
+    }
+}
+@media screen and (max-width:1100px) {
+    .side-bar ul li .my-photo {
+        display: none;
+    }
+    .side-bar {
+        width: 0;
+        background-image: none;
+        background: linear-gradient(rgba(3, 63, 71), rgba(3, 63, 71));
+        top:0;
+        overflow: hidden;
+        transition: all .3s;
+    }
+    .side-bar.active{
+        width: 50%;
+    }
+    .nav{
+        display: flex;
+    }
+    .close {
+        display: block;
+    }
+    .content{
+        width: 100%;
+        position: relative;
+    }
+    .content .header {
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 30px;
+    }
+    .content .header img {
+        width: 600px;
+    }
+    .content .header .text{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:10px;
+    }
+    .content .header .text h3 {
+        font-size: 300%;
+    }
+    .content .header .text span {
+        font-size: 250%;
+    }
+    .buttons{
+        margin-top: 10px;
+    }
+    .services {
+        padding: 10px;
+    }
+    .services .row .card {
+        padding: 10px;
+        width: 30%;
+    }
+    .services .row .card h1{
+        font-size: 20px;
+    }
+    .services .row .card span {
+        font-size: 16px;
+    }
+    .about span  {
+        width: 600px;
+    }
+    .contact form {
+        width: 660px;
+    }
+}
+@media screen and (max-width:670px)  {
+    .side-bar.active{
+        width: 100%;
+    }
+    .content .header img{
+        width: 100%;
+    }
+    .content .header .text h3 {
+        font-size:30px;
+    }
+    .content .header .text span {
+        font-size: 25px;
+    }
+    .services {
+        justify-content: center;
+        align-items: center;
+    }
+    .services h2 {
+        font-size: 200%;
+    }
+    .services .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .services .row .card {
+        width: 90%;
+    }
+    .work .card {
+        width: 90%;
+    }
+    .about {
+        padding: 50px;
+    }
+    .about span {
+        width: 100%;
+        font-size: 17px;
+        font-weight: 400;
+        padding: 10px;
+    }
+    .contact form{
+        width: 90%;
+    }
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer span {
+        font-size: 17px;
+    }
+}
+@media screen and (max-width:370px) {
+    .buttons{
+        flex-direction: column;
+        width: 100%;
+    }
+    .about {
+        padding: 30px;
+    }
+}
