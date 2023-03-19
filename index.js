@@ -1,3 +1,4 @@
+
 const menuBtn = document.querySelector(".menu-btn")
 const menu = document.querySelector(".side-bar")
 const closeBtn = document.querySelector(".close")
@@ -39,6 +40,16 @@ window.addEventListener('scroll',(event) => {
                 element.classList.remove("active");
             })
             links[i].classList.add("active");
+
+
+
         }
     })
 });
+
+function sendEmail(){
+    document.getElementById("email").value = "";
+    document.getElementById("subject").value= "";;
+    document.getElementById("message").value= "";;
+    document.getElementById("name").value= "";;
+}
